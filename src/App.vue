@@ -1,28 +1,39 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+    <div class="w-screen h-screen flex items-center justify-center p-16">
+      <div class="main-card outlined-card w-full h-full flex">
+        <div class="form w-9/12 h-full p-5"></div>
+        <div class="steps bg-blue-ribbon w-3/12 h-full"></div>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
-import HelloWorld from "./components/HelloWorld.vue";
+import { mapState, mapActions } from "vuex";
 
 export default {
   name: "app",
-  components: {
-    HelloWorld
+  components: {},
+  computed: mapState({
+    countAlias: "count"
+  }),
+  methods: {
+    ...mapActions(["increaseCount", "decreaseCount"])
   }
 };
 </script>
 
-<style>
+<style scoped lang="scss">
 #app {
   font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  .main-card {
+    overflow: hidden;
+    border: 10px solid $shamrock;
+  }
 }
 </style>

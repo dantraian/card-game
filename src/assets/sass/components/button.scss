@@ -1,0 +1,170 @@
+// --------------------- //
+// Buttons resets and base styles
+//
+.button-reset {
+  outline: none;
+  border: none;
+  user-select: none;
+  &:disabled {
+    background-color: $fjord;
+    color: $accent-lightest;
+    cursor: not-allowed;
+    border: 1px solid $fjord;
+    &:hover {
+      background-color: $fjord;
+      color: $accent-lightest;
+      border: 1px solid $fjord;
+    }
+  }
+}
+
+.button-animations {
+  @extend .elevated-blur-2;
+  transition: background-color 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+// --------------------- //
+// Buttons size
+// --------------------- //
+.button-small {
+  @extend .type-small, .button-reset;
+  padding: 5px 15px;
+  border-radius: 10px;
+}
+.button-middle {
+  @extend .type-smaller, .button-reset;
+  padding: 7px 18px;
+  border-radius: 15px;
+}
+.button-large {
+  @extend .type-normal, .button-reset;
+  padding: 10px 20px;
+  border-radius: 20px;
+}
+.button-extra {
+  @extend .type-5, .button-reset;
+  padding: 10px 25px;
+  border-radius: 30px;
+}
+
+// --------------------- //
+// Buttons colours
+// --------------------- //
+.button-success {
+  @extend .button-animations;
+  background-color: $shamrock;
+  border: 1px solid $shamrock;
+  color: $blue-ribbon;
+  &:hover {
+    background-color: darken($shamrock, 4%);
+  }
+}
+.button-danger {
+  @extend .button-animations;
+  background-color: $sundown;
+  border: 1px solid $sundown;
+  color: $blue-ribbon;
+  &:hover {
+    background-color: darken($sundown, 4%);
+  }
+}
+
+.button-info {
+  @extend .button-animations;
+  background-color: $curious-blue;
+  border: 1px solid $curious-blue;
+
+  color: $white;
+  &:hover {
+    background-color: darken($curious-blue, 4%);
+  }
+}
+.button-warning {
+  @extend .button-animations;
+  background-color: $supernova;
+  border: 1px solid $supernova;
+  color: $blue-ribbon;
+  &:hover {
+    background-color: darken($supernova, 4%);
+  }
+}
+.button-accent {
+  @extend .button-animations;
+  background-color: $blue-ribbon;
+  border: 1px solid $blue-ribbon;
+  color: $white;
+  &:hover {
+    background-color: darken($royal-blue, 4%);
+  }
+}
+.button-blank {
+  @extend .button-animations;
+  background-color: white;
+  border: none;
+  color: $blue-ribbon;
+  box-shadow: none;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.button-secondary {
+  background-color: $white;
+  &.button-info,
+  &.button-accent {
+    color: $blue-ribbon;
+    &:disabled {
+      background-color: $white;
+      border: 1px solid $fjord;
+      color: $fjord;
+      cursor: not-allowed;
+    }
+  }
+
+  &.button-success {
+    &:hover {
+      background-color: lighten($shamrock, 20%);
+    }
+  }
+  &.button-danger {
+    &:hover {
+      background-color: lighten($sundown, 4%);
+    }
+  }
+  &.button-info {
+    &:hover {
+      background-color: lighten($curious-blue, 20%);
+    }
+  }
+  &.button-warning {
+    &:hover {
+      background-color: lighten($supernova, 20%);
+    }
+  }
+  &.button-accent {
+    &:hover {
+      background-color: lighten($royal-blue, 20%);
+    }
+  }
+}
+
+// ------------------- //
+// to be replaced in dom TODO
+// ------------------- //
+.main-button {
+}
+
+.secondary-button {
+}
+
+.info-button {
+}
+.info-minimal-button {
+}
+
+.success-button {
+}
+
+.danger-button {
+}

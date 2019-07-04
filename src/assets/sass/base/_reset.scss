@@ -1,0 +1,14 @@
+.link-reset{
+  text-decoration: none;
+  color: $blue-ribbon;
+  outline: none;
+  &:hover{
+    text-decoration: none;
+    color: $blue-ribbon;
+    outline: none;
+  }
+}
+
+*{
+  box-sizing: border-box;
+}

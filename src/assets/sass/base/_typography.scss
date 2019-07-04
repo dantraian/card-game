@@ -1,0 +1,58 @@
+$min_width: 320px;
+$max_width: 1200px;
+$min_font: 16px;
+$max_font: 24px;
+
+@import url('https://fonts.googleapis.com/css?family=Work+Sans:300,400,700,800,900&display=swap');
+
+*{
+ font-family: "Work Sans", Helvetica, serif;
+}
+.base-font{
+  margin: 0;
+  padding: 0;
+}
+
+// types
+.type-1         { @include fluid-type(320px, 1200px, 58.92px, 71.55px);  font-weight: 900; @extend .base-font; }
+.type-2         { @include fluid-type(320px, 1200px, 44.20px, 53.67px);  font-weight: 800; @extend .base-font; }
+.type-3         { @include fluid-type(320px, 1200px, 33.16px, 40.27px);  font-weight: 700; @extend .base-font; }
+.type-4         { @include fluid-type(320px, 1200px, 24.88px, 30.21px);  font-weight: 700; @extend .base-font; }
+.type-5         { @include fluid-type(320px, 1200px, 18.66px, 22.66px);  font-weight: 400; @extend .base-font; }
+.type-normal    { @include fluid-type(320px, 1200px, 14.00px, 17.00px);  font-weight: 400; @extend .base-font; }
+.type-smaller   { @include fluid-type(320px, 1200px, 13.00px, 16.00px);  font-weight: 400; @extend .base-font; }
+.type-small     { @include fluid-type(320px, 1200px, 10.50px, 12.75px);  font-weight: 300; @extend .base-font; }
+
+
+// weights
+.weight-200    { font-weight: 200; }
+
+.weight-300    { font-weight: 300; }
+.weight-400    { font-weight: 400; }
+.weight-700    { font-weight: 700; }
+.weight-800    { font-weight: 800; }
+.weight-900    { font-weight: 900; }
+
+.text-one-line{
+ white-space:nowrap ;
+ overflow:hidden
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

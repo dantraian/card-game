@@ -1,0 +1,36 @@
+
+@tailwind base;
+
+/**
+ * Abstracts classes and styles
+ */
+@import "abstracts/variables";
+@import "abstracts/functions";
+@import "abstracts/mixins";
+@import "abstracts/misc";
+
+/**
+ * Base classes and styles
+ */
+@import "base/reset";
+@import "base/typography";
+@import "base/rotation";
+@import "base/code";
+@import "base/transitions";
+
+/**
+ * State modifiers
+ */
+@import "states/elevation";
+
+/**
+ * Component styles
+ */
+@import "components/card";
+@import "components/button";
+@import "components/button-group";
+@import "components/icon";
+@import "components/label";
+@import "components/input";
+
+@tailwind utilities;

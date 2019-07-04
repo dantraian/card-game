@@ -1,0 +1,29 @@
+.elevated-blur-2 {
+  box-shadow: 0 10px 10px transparentize($accent-light, 0.85);
+}
+
+.elevated-blur-4 {
+  box-shadow: 0 10px 15px transparentize($accent-light, 0.75);
+}
+
+.elevated-blur-8 {
+  box-shadow: 0 10px 15px transparentize($accent-light, 0.6);
+}
+.elevated-blur-16 {
+  box-shadow: 0 10px 15px transparentize($accent-light, 0.45);
+}
+
+.inner-blur-2 {
+  box-shadow: inset 0 0 10px transparentize($accent-light, 0.85);
+}
+
+.inner-blur-4 {
+  box-shadow: inset 0 0 15px transparentize($accent-light, 0.75);
+}
+
+.inner-blur-8 {
+  box-shadow: inset 0 0 15px transparentize($accent-light, 0.65);
+}
+.inner-blur-16 {
+  box-shadow: inset 0 0 15px transparentize($accent-light, 0.55);
+}

@@ -1,0 +1,55 @@
+.base-card {
+  border-radius: 10px;
+  background-color: $white;
+}
+
+.minimal-card {
+  @extend .base-card;
+  border: 1px solid $accent-lighter;
+  background-color: $accent-lightest;
+}
+
+.outlined-card {
+  @extend .base-card;
+  border: 1px solid $spindle;
+}
+
+.outlined-card-2 {
+  @extend .base-card;
+  border: 1px solid $accent-lightest;
+}
+
+.data-card {
+  .header-card {
+    padding: 10px 15px;
+  }
+}
+$card-unit: 50px;
+.xs-size-card {
+  width: $card-unit;
+  height: $card-unit;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+$card-unit: 100px;
+.min-size-card {
+  width: $card-unit;
+  height: $card-unit;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+$card-unit-max: 150px;
+.max-size-card {
+  width: $card-unit-max;
+  height: $card-unit-max;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border-radius: 10px;
+}
