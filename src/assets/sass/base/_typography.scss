@@ -4,14 +4,26 @@ $min_font: 16px;
 $max_font: 24px;
 
 @import url('https://fonts.googleapis.com/css?family=Work+Sans:300,400,700,800,900&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Arvo:700&display=swap");
 
-*{
- font-family: "Work Sans", Helvetica, serif;
-}
+
+
 .base-font{
   margin: 0;
   padding: 0;
 }
+
+@font-face {
+  font-family: 'Bluu';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Bluu-Bold'), url("~@/assets/fonts/BluuNext-Bold.otf") format('opentype');
+}
+
+body, *{
+  font-family: "Bluu", sans-serif;
+}
+
 
 // types
 .type-1         { @include fluid-type(320px, 1200px, 58.92px, 71.55px);  font-weight: 900; @extend .base-font; }

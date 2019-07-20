@@ -1,52 +1,11 @@
-// SASS style sheet */
-// As hex codes */
-
-$spacing: (
-  "10": 10vw,
-  "20": 20vw,
-  "30": 30vw,
-  "40": 40vw,
-  "50": 50vw,
-  "70": 70vw,
-  "80": 80vw,
-  "90": 90vw,
-  "100": 100vw,
-  "full": 60100%
-);
-
-$colors: (
-  forest-green: #30af2e,
-  shamrock: #37cfb1,
-  curious-blue: #2ea5dd,
-  royal-blue: #4259ed,
-  blue-ribbon: #2643f7,
-  ultramarine: #061387,
-  firebrick: #b22222,
-  sundown: #ffb0b0,
-  supernova: #fecc02
-);
-
-// Main Primary color */
-$forest-green: #30af2e;
-$shamrock: #37cfb1;
-$curious-blue: #2ea5dd;
-$royal-blue: #4259ed;
-$blue-ribbon: #2643f7;
-$ultramarine: #061387;
-$firebrick: #b22222;
-$sundown: #ffb0b0;
-$supernova: #fecc02;
 
 // primary light colours
-$forest-green-light: #a4e6a3;
-$shamrock-light: #aeebdf;
-$curious-blue-light: #abdbf1;
-$royal-blue-light: #b3bcf7;
-$blue-ribbon-light: #a8b3fb;
-$ultramarine-light: #717ff8;
-$firebrick-light: #eb9a9a;
-$sundown-light: #ffdfdf;
-$supernova-light: #feea99;
+$shamrock: #37cfb1;
+$sundown: #ffb0b0;
+$marigold: #ffe063;
+$royal-blue: #4749f4;
+$dark-blue: #0c00a9;
+$gulf-stream: #7bb7ae;
 
 $spindle: #c0d0ee;
 $gull-grey: #5f768f;
@@ -55,20 +14,8 @@ $rhino: #293554;
 $black-pearl: #1f2932;
 
 // Accent colours
-$accent-darkest: #2a3554;
-$accent-darkest: #2a3554;
-$accent-darker: #2d3766;
-$accent-dark: #4d5786;
-$accent-grey: #6f7f9f;
 $accent-light: #a2afcd;
 $accent-lighter: #dfe6f4;
 $accent-lightest: #f0f3f6;
-$accent-fade-blue: #f2f7fc;
 
-$white: #ffffff;
-
-$verbose: #a0ccdc;
-$success: #21af79;
-$danger: #fb2358;
-$warning: #fc9202;
-$info: #5780f9;
+$white:fff;

@@ -4,17 +4,19 @@
     flex flex-wrap justify-center
     min-h-screen max-h-screen py-10 relative"
   >
-    <div
-      v-for="index in 6"
+    <card
+      v-for="index in charactersArray"
       :key="index"
-      class="outlined-card elevated-blur-4 min-h-30 w-3/12 m-3 pointer"
-      @click="expandCard"
-    ></div>
+      :data="cardCombinations[index]"
+      :employeeId="index"
+      class="m-1"
+    >
+    </card>
 
     <div
       class="main-card outlined-card elevated-blur-4 bg-shamrock"
-      :style="mainCardData"
       ref="mainCard"
+      :style="mainCardData"
       v-show="showCard"
     >
       <div class="content w-full">
@@ -28,8 +30,12 @@
 </template>
 
 <script>
+import Card from "./Card";
+import { deckBuilder } from "../mixins/DeckBuilder";
 export default {
   name: "MasterGridLayout",
+  mixins: [deckBuilder],
+  components: { Card },
   created() {},
   mounted() {
     this.mainCard = this.$refs.mainCard;
@@ -42,8 +48,6 @@ export default {
       window.innerHeight || 0
     );
     this.setDesiredDivData();
-
-    console.log("mounted");
   },
   data() {
     return {
@@ -101,23 +105,8 @@ export default {
 
       // get width of screen, height of screen
     }
+
+    //end of methods
   }
 };
 </script>
-
-<style scoped lang="scss">
-.card-container {
-  transform: rotateX(-60deg) rotateY(0deg) rotateZ(-45deg);
-}
-.main-card {
-  transition: all 2s cubic-bezier(0.075, 0.82, 0.165, 1);
-  &.expanded {
-    .content {
-      display: block;
-    }
-  }
-  .content {
-    position: relative;
-  }
-}
-</style>

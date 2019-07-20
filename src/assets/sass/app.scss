@@ -5,32 +5,59 @@
  * Abstracts classes and styles
  */
 @import "abstracts/variables";
-@import "abstracts/functions";
 @import "abstracts/mixins";
-@import "abstracts/misc";
+@import "components/card";
+@import "states/elevation";
 
 /**
  * Base classes and styles
  */
-@import "base/reset";
 @import "base/typography";
-@import "base/rotation";
-@import "base/code";
-@import "base/transitions";
-
-/**
- * State modifiers
- */
-@import "states/elevation";
-
-/**
- * Component styles
- */
-@import "components/card";
-@import "components/button";
-@import "components/button-group";
-@import "components/icon";
-@import "components/label";
-@import "components/input";
 
 @tailwind utilities;
+
+.border-test {
+  border: 1px solid red;
+}
+.card {
+  width: 220px;
+  height: 405px;
+  position: relative;
+  overflow: hidden;
+  img.card-image {
+    width: 70%;
+
+  }
+  .title {
+    position: absolute;
+    top: 5px;
+    left: 15px;
+    width: 30px;
+    .title-text {
+
+      color: black;
+      font-size: 28px;
+      &.red {
+        color: #fbe16f;
+      }
+    }
+    &.reverted {
+      top: auto;
+      left: auto;
+      bottom: 5px;
+      right: 15px;
+      transform: scaleY(-1);
+    }
+  }
+}
+.main-card {
+  transition: all 2s cubic-bezier(0.075, 0.82, 0.165, 1);
+  &.expanded {
+    .content {
+      display: block;
+    }
+  }
+  .content {
+    position: relative;
+  }
+}
