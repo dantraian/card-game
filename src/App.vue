@@ -1,15 +1,16 @@
 <template>
   <div id="app">
-    <div class="p-3"></div>
+    <todo-app></todo-app>
     <master-grid-layout></master-grid-layout>
   </div>
 </template>
 
 <script>
 import MasterGridLayout from "./components/MasterGridLayout";
+import TodoApp from "./components/TodoApp";
 export default {
   name: "app",
-  components: { MasterGridLayout },
+  components: { MasterGridLayout, TodoApp },
   computed: {},
   methods: {}
 };

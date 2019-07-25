@@ -1,6 +1,7 @@
 <template>
   <div
-    class="card outlined-card elevated-blur-4 m-3 pointer flex items-center justify-center"
+    ref="selfCard"
+    class="game-card outlined-card elevated-blur-4 m-3 pointer flex items-center justify-center"
   >
     <div class="title flex flex-col items-center">
       <p class="title-text weight-700 " :class="textColor">
@@ -17,7 +18,8 @@
 
     <img
       class="card-image"
-      :src="require(`@/assets/img/employees/${employeeId}.jpg`)"
+      :class="{ reverted: getRandomBoolean }"
+      :src="require(`@/assets/img/icons/${data.shape}/${valueOfCard}.svg`)"
       alt=""
     />
   </div>
@@ -29,28 +31,50 @@ export default {
   created() {
     this.textColor =
       this.data.shape === "hearth" || this.data.shape === "diamond"
-        ? "red"
+        ? "accent"
         : "";
+    this.valueOfCard = this.data.number === "A" ? 1 : this.data.number;
   },
-  mounted() {},
+  mounted() {
+    // this.setCheckIfInView();
+  },
   props: {
     data: {
       required: true,
       type: Object
-    },
-    employeeId: {
-      required: true,
-      type: Number
     }
   },
   data() {
     return {
-      textColor: ""
+      textColor: "",
+      valueOfCard: ""
     };
   },
   methods: {
-    getRandomEmployee() {
-      return Math.floor(Math.random() * 36 + 1);
+    getRandomBoolean() {
+      return Math.random() >= 0.5;
+    },
+
+    setCheckIfInView() {
+      let self = this;
+      setInterval(() => {
+        console.log(
+          self.checkIfInViewAtLeastPercentage(self.$refs.selfCard, 5)
+        );
+      }, 1000);
+    },
+    checkIfInViewAtLeastPercentage(el, percentVisible) {
+      let rect = el.getBoundingClientRect(),
+        windowHeight =
+          window.innerHeight || document.documentElement.clientHeight;
+
+      return !(
+        Math.floor(
+          100 - ((rect.top >= 0 ? 0 : rect.top) / +-(rect.height / 1)) * 100
+        ) < percentVisible ||
+        Math.floor(100 - ((rect.bottom - windowHeight) / rect.height) * 100) <
+          percentVisible
+      );
     }
     //end of methods
   }

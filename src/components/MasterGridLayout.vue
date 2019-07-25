@@ -5,10 +5,9 @@
     min-h-screen max-h-screen py-10 relative"
   >
     <card
-      v-for="index in charactersArray"
-      :key="index"
-      :data="cardCombinations[index]"
-      :employeeId="index"
+      v-for="item in cardCombinations"
+      :key="item.index"
+      :data="item"
       class="m-1"
     >
     </card>

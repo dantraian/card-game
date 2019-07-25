@@ -19,13 +19,21 @@
 .border-test {
   border: 1px solid red;
 }
-.card {
+
+body, html{
+  background-color: $royal-blue;
+}
+.game-card {
   width: 220px;
   height: 405px;
   position: relative;
   overflow: hidden;
+  background-color: $white;
   img.card-image {
-    width: 70%;
+    width: 100%;
+    &.reverted {
+      transform: scaleY(-1);
+    }
 
   }
   .title {
@@ -34,12 +42,14 @@
     left: 15px;
     width: 30px;
     .title-text {
-
-      color: black;
+      color: $marigold;
       font-size: 28px;
-      &.red {
-        color: #fbe16f;
+      &.accent {
+        color: $royal-blue;
       }
+    }
+    img{
+      width: 50%;
     }
     &.reverted {
       top: auto;
