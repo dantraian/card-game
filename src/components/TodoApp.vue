@@ -1,24 +1,27 @@
 <template>
-  <div id="todoApp">
-    <h1>Hello App!</h1>
-    <p>
-      <!-- use router-link component for navigation. -->
-      <!-- specify the link by passing the `to` prop. -->
-      <!-- `<router-link>` will be rendered as an `<a>` tag by default -->
-      <router-link to="/foo">Go to Foo</router-link>
-      <router-link to="/bar">Go to Bar</router-link>
-    </p>
-    <!-- route outlet -->
-    <!-- component matched by the route will render here -->
-    <router-view></router-view>
+  <div id="todoApp" class="flex w-screen">
+    <sidebar class="w-2/12 h-screen max-h-screen max-w."></sidebar>
+
+    <div class="content w-10/12 relative">
+      <div class="page-content">
+        <navbar class="w-full px-8 pt-10" id="navbar"></navbar>
+        <transition name="fade" mode="out-in">
+          <router-view class="router-view mt-10  px-8"></router-view>
+        </transition>
+      </div>
+
+      <div class="background-gradient"></div>
+    </div>
   </div>
 </template>
 
 <script>
+import Sidebar from "./layout/Sidebar";
+import Navbar from "./layout/Navbar";
 export default {
   mixins: [],
 
-  components: {},
+  components: { Sidebar, Navbar },
 
   directives: {},
 
@@ -41,3 +44,26 @@ export default {
   methods: {}
 };
 </script>
+<style lang="scss" scoped>
+.page-content {
+  position: relative;
+  z-index: 20;
+}
+.background-gradient {
+  width: 100%;
+  height: 70vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  border-bottom-left-radius: 25px;
+  border-bottom-right-radius: 25px;
+  background: rgb(106, 105, 255);
+  background: linear-gradient(
+    54deg,
+    rgba(106, 105, 255, 1) 0%,
+    rgba(150, 91, 193, 1) 35%,
+    rgba(229, 87, 131, 1) 100%
+  );
+}
+</style>

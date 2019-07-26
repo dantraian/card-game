@@ -6,8 +6,14 @@
  */
 @import "abstracts/variables";
 @import "abstracts/mixins";
+
+
 @import "components/card";
+
+
 @import "states/elevation";
+@import "states/border";
+@import "states/transition";
 
 /**
  * Base classes and styles
@@ -20,9 +26,12 @@
   border: 1px solid red;
 }
 
-body, html{
-  background-color: $royal-blue;
+
+.pointer{
+  cursor: pointer;
 }
+
+
 .game-card {
   width: 220px;
   height: 405px;
