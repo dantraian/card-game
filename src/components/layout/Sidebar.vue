@@ -1,7 +1,9 @@
 <template>
   <div class="sidebar">
     <div class="logo">
-      <img :src="require(`@/assets/img/logo.svg`)" alt="" />
+      <router-link to="/">
+        <img :src="require(`@/assets/img/logo.svg`)" alt="" />
+      </router-link>
     </div>
     <p
       class="type-normal weight-700 uppercase mt-4 text-gull-grey pl-10 text-left"
@@ -69,10 +71,9 @@ export default {
 
   mounted() {},
 
-  computed: {},
-
   watch: {},
 
+  computed: {},
   methods: {}
 };
 </script>

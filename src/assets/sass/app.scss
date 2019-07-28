@@ -8,6 +8,10 @@
 @import "abstracts/mixins";
 
 
+//atoms
+@import 'atoms/inputs/_inputs';
+@import 'atoms/buttons/_buttons';
+
 @import "components/card";
 
 

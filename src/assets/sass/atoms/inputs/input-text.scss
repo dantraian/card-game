@@ -1,0 +1,24 @@
+.input-text {
+  @extend .type-normal;
+  padding: 5px 20px !important;
+  display: inline-block;
+  border: 1px solid $spindle;
+  border-radius: 5px;
+
+  outline: none !important;
+  background: white;
+  transition: all 0.2s ease-in-out;
+
+  &:focus,
+  :active {
+    border: 1px solid $blue-ribbon;
+    color: $blue-ribbon;
+    outline: none !important;
+  }
+  &::placeholder {
+    color: $gull-grey;
+  }
+
+}
+
+

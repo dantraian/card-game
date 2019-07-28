@@ -1,0 +1,85 @@
+// --------------------- //
+// Buttons resets and base styles
+//
+.button-reset {
+  outline: none;
+  border: none;
+  user-select: none;
+  &:focus {
+    outline: none;
+  }
+  &:disabled {
+    background-color: $fjord;
+    color: $accent-lightest;
+    cursor: not-allowed;
+    border: 1px solid $fjord;
+    &:hover {
+      background-color: $fjord;
+      color: $accent-lightest;
+      border: 1px solid $fjord;
+    }
+  }
+}
+
+.button-animations {
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+// --------------------- //
+// Buttons size
+// --------------------- //
+.button-small {
+  @extend .type-smaller, .button-reset;
+  padding: 2px 20px!important;
+  border-radius: 15px;
+}
+.button-default {
+  @extend .type-smaller, .button-reset;
+  padding: 5px 20px!important;
+  border-radius: 20px;
+}
+.button-large {
+  @extend .type-normal, .button-reset;
+  padding: 7px 20px!important;
+  border-radius: 35px;
+}
+.button-extra {
+  @extend .type-5, .button-reset;
+  padding: 6px 25px!important;
+  border-radius: 35px;
+}
+
+// --------------------- //
+// Buttons colours
+// --------------------- //
+.button-success {
+  @extend .button-animations;
+  background-color: $shamrock;
+  border: 1px solid $shamrock;
+  color: $blue-ribbon;
+  &:hover {
+    background-color: darken($shamrock, 4%);
+  }
+}
+.button-danger {
+  @extend .button-animations;
+  background-color: $sundown;
+  border: 1px solid $sundown;
+  color: $blue-ribbon;
+  &:hover {
+    background-color: darken($sundown, 4%);
+  }
+}
+
+.button-accent {
+  @extend .button-animations;
+  background-color: $amaranth;
+  border: 1px solid $amaranth;
+  color: $white;
+  box-shadow: 0 5px 20px transparentize($amaranth, 0.5);
+  &:hover {
+    box-shadow: 0 5px 20px transparentize($amaranth, 0.4);
+    background-color: darken($amaranth, 4%);
+  }
+}

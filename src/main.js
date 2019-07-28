@@ -1,29 +1,22 @@
-import "@/assets/sass/app.scss";
-
 import Vue from "vue";
-import App from "./App.vue";
 import Axios from "axios";
+
+import "@/assets/sass/app.scss";
+import App from "./App.vue";
 import store from "./store/store";
+import router from "./routes/route";
 
 Vue.prototype.$http = Axios;
 const token = localStorage.getItem("token");
 if (token) {
   Vue.prototype.$http.defaults.headers.common["Authorization"] = token;
 }
-
-Vue.prototype.$http = Axios;
-import router from "./routes/route";
-
 Vue.config.productionTip = false;
 
 new Vue({
   router,
   store,
-  data: {
-    showSidebar: true,
-    mergeMethod: "download",
-    searchOptions: ""
-  },
+  data: {},
 
   mounted() {},
 

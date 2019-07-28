@@ -1,15 +1,16 @@
 <template>
   <div id="app">
-    <todo-app></todo-app>
+    <master-layout></master-layout>
   </div>
 </template>
 
 <script>
-import TodoApp from "./components/TodoApp";
+import MasterLayout from "./components/MasterLayout";
 export default {
   name: "app",
-  components: { TodoApp },
+  components: { MasterLayout },
   computed: {},
+  created() {},
   methods: {}
 };
 </script>

@@ -1,7 +1,6 @@
 let defaultConfig = require("tailwindcss/defaultConfig");
 
 let colors = {
-  "forest-green": "#30af2e",
   shamrock: "#37cfb1",
   "curious-blue": "#2ea5dd",
   "royal-blue": "#4259ed",
@@ -9,17 +8,7 @@ let colors = {
   ultramarine: "#061387",
   firebrick: "#b22222",
   sundown: "#ffb0b0",
-
-  // primary light colours
-  "forest-green-light": "#a4e6a3",
-  "shamrock-light": "#aeebdf",
-  "curious-blue-light": "#abdbf1",
-  "royal-blue-light": "#b3bcf7",
-  "blue-ribbon-light": "#a8b3fb",
-  "ultramarine-light": "#717ff8",
-  "firebrick-light": "#eb9a9a",
-  "sundown-light": "#ffdfdf",
-  "supernova-light": "#feea99",
+  amaranth: "#e81e61",
 
   spindle: "#c0d0ee",
   "gull-grey": "#5f768f",
@@ -234,7 +223,17 @@ module.exports = {
       "4xl": "56rem",
       "5xl": "64rem",
       "6xl": "72rem",
+
       full: "100%",
+      "10vw": "10vw",
+      "20vw": "20vw",
+      "30vw": "30vw",
+      "40vw": "40vw",
+      "50vw": "50vw",
+      "60vw": "60vw",
+      "70vw": "70vw",
+      "80vw": "80vw",
+      "90vw": "90vw",
       screen: "100vw",
       "mac-small": "1440px",
       mac: "1680px",
