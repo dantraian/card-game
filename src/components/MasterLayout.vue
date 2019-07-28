@@ -1,9 +1,11 @@
 <template>
-  <div class="flex w-screen">
-    <div class="router-view-authenticated w-screen" v-if="!storedUser.logged">
-      <router-view name="authenticated"></router-view>
+  <div class="flex w-screen relative">
+    <div class="w-screen" v-if="!isLoggedIn">
+      <transition name="fade" mode="out-in">
+        <router-view name="unauthenticated"></router-view>
+      </transition>
     </div>
-    <div class="router-view-unauthenticated w-screen" v-else>
+    <div class="w-screen" v-else>
       <sidebar class="w-2/12 h-screen max-h-screen max-w."></sidebar>
 
       <div class="content w-10/12 relative">
@@ -12,7 +14,7 @@
 
           <transition name="fade" mode="out-in">
             <router-view
-              name="unauthenticated"
+              name="authenticated"
               class="router-view mt-10  px-8"
             ></router-view>
           </transition>
@@ -27,7 +29,7 @@
 <script>
 import Sidebar from "./layout/Sidebar";
 import Navbar from "./layout/Navbar";
-import { mapState } from "vuex";
+import { mapState, mapGetters } from "vuex";
 
 export default {
   mixins: [],
@@ -51,12 +53,21 @@ export default {
   computed: {
     ...mapState({
       storedUser: "user"
+    }),
+    ...mapGetters({
+      isLoggedIn: "isLoggedIn"
     })
   },
 
   watch: {},
 
-  methods: {}
+  methods: {
+    logout: function() {
+      this.$store.dispatch("logout").then(() => {
+        this.$router.push("/login");
+      });
+    }
+  }
 };
 </script>
 <style lang="scss" scoped>
@@ -80,5 +91,10 @@ export default {
     rgba(150, 91, 193, 1) 35%,
     rgba(229, 87, 131, 1) 100%
   );
+}
+.debugger {
+  position: fixed;
+  top: 30px;
+  right: 30px;
 }
 </style>

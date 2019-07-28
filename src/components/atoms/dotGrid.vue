@@ -1,11 +1,12 @@
 <template>
-  <div class="flex flex-col">
-    <div class="row flex" v-for="index in 5" :key="index">
+  <div class="container flex flex-col">
+    <div class="row flex" v-for="index in gridNumber" :key="index">
       <div
-        class="dot m-2"
+        class="dot"
         :class="'bg-' + colour"
-        v-for="key in 5"
+        v-for="key in gridNumber"
         :key="key"
+        :style="dotStyles"
       ></div>
     </div>
   </div>
@@ -13,18 +14,26 @@
 
 <script>
 export default {
-  mixins: [],
-
-  components: {},
-
-  directives: {},
-
-  filters: {},
-
   props: {
     colour: {
       type: String,
-      default: "gull-grey"
+      default: "royal-blue"
+    },
+    dotSize: {
+      type: Number,
+      default: 1
+    },
+    dotOpacity: {
+      type: Number,
+      default: 1
+    },
+    gridNumber: {
+      type: Number,
+      default: 5
+    },
+    gridSpacing: {
+      type: Number,
+      default: 10
     }
   },
 
@@ -32,22 +41,46 @@ export default {
     return {};
   },
 
-  created() {},
-
-  mounted() {},
-
-  computed: {},
-
-  watch: {},
-
-  methods: {}
+  computed: {
+    dotStyles() {
+      return {
+        transform: "scale(" + this.dotSize + ")",
+        opacity: this.dotOpacity,
+        margin: this.gridSpacing + "px"
+      };
+    }
+  }
 };
 </script>
 <style scoped>
 .dot {
   width: 10px;
   height: 10px;
-  display: block;
   border-radius: 20px;
+}
+.leftTopCornerOut {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translateX(-60%) translateY(-60%);
+}
+.rightTopCornerOut {
+  position: absolute;
+  top: 0;
+  right: 0;
+
+  transform: translateX(60%) translateY(-60%);
+}
+.leftBottomCornerOut {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transform: translateX(-60%) translateY(60%);
+}
+.rightBottomCornerOut {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  transform: translateX(60%) translateY(60%);
 }
 </style>

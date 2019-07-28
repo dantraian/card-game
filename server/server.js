@@ -68,7 +68,8 @@ router.post("/register-admin", function(req, res) {
 router.post("/login", (req, res) => {
   db.selectByEmail(req.body.email, (err, user) => {
     if (err) return res.status(500).send("Error on the server.");
-    if (!user) return res.status(404).send("No user found.");
+    if (!user)
+      return res.status(404).send("Please check for valid credentials.");
     let passwordIsValid = bcrypt.compareSync(req.body.password, user.user_pass);
     if (!passwordIsValid)
       return res.status(401).send({ auth: false, token: null });

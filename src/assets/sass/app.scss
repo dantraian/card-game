@@ -1,4 +1,3 @@
-
 @tailwind base;
 
 /**
@@ -7,17 +6,16 @@
 @import "abstracts/variables";
 @import "abstracts/mixins";
 
-
 //atoms
-@import 'atoms/inputs/_inputs';
-@import 'atoms/buttons/_buttons';
+@import "atoms/inputs/_inputs";
+@import "atoms/buttons/_buttons";
 
 @import "components/card";
-
 
 @import "states/elevation";
 @import "states/border";
 @import "states/transition";
+@import "states/gradients";
 
 /**
  * Base classes and styles
@@ -30,11 +28,9 @@
   border: 1px solid red;
 }
 
-
-.pointer{
+.pointer {
   cursor: pointer;
 }
-
 
 .game-card {
   width: 220px;
@@ -47,7 +43,6 @@
     &.reverted {
       transform: scaleY(-1);
     }
-
   }
   .title {
     position: absolute;
@@ -61,7 +56,7 @@
         color: $royal-blue;
       }
     }
-    img{
+    img {
       width: 50%;
     }
     &.reverted {

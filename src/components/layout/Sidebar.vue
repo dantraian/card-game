@@ -17,18 +17,18 @@
       <router-link class="link pl-10  py-3" to="/dashboard">
         <i class="material-icons mr-4">subject</i>Dashboard
       </router-link>
-      <router-link class="link pl-10  py-3" to="/photos">
-        <i class="material-icons mr-4">photo_camera</i>Flightcases
-      </router-link>
-      <router-link class="link pl-10  py-3" to="/messages">
-        <i class="material-icons mr-4">message</i>Events
-      </router-link>
-      <router-link class="link pl-10  py-3" to="/stats">
-        <i class="material-icons mr-4">assessment</i>Statuses
-      </router-link>
-      <router-link class="link pl-10  py-3" to="/settings">
-        <i class="material-icons mr-4">settings</i>Settings
-      </router-link>
+      <!--<router-link class="link pl-10  py-3" to="/photos">-->
+      <!--<i class="material-icons mr-4">photo_camera</i>Flightcases-->
+      <!--</router-link>-->
+      <!--<router-link class="link pl-10  py-3" to="/messages">-->
+      <!--<i class="material-icons mr-4">message</i>Events-->
+      <!--</router-link>-->
+      <!--<router-link class="link pl-10  py-3" to="/stats">-->
+      <!--<i class="material-icons mr-4">assessment</i>Statuses-->
+      <!--</router-link>-->
+      <!--<router-link class="link pl-10  py-3" to="/settings">-->
+      <!--<i class="material-icons mr-4">settings</i>Settings-->
+      <!--</router-link>-->
     </div>
 
     <p

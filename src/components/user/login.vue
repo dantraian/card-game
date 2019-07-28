@@ -1,10 +1,18 @@
 <template>
   <div>
-    <div class="main-screen w-full h-screen flex items-center justify-center">
+    <div
+      class="gradient-5 animateGradient w-full h-screen flex items-center justify-center"
+    >
       <div
         class="w-1/3 max-w-40vw bg-white p-10 text-left flex flex-col relative "
       >
-        <dot-grid class="dotGrid" colour="royal-blue"></dot-grid>
+        <dot-grid
+          class="leftTopCornerOut"
+          :dot-size="0.6"
+          :dot-opacity="0.6"
+          :grid-spacing="10"
+          colour="royal-blue"
+        ></dot-grid>
 
         <p class="type-3 playfair text-rhino weight-700 text-left">Login</p>
 
@@ -41,8 +49,14 @@
           Login
         </button>
 
+        <transition name="fade" mode="out-in">
+          <p v-if="errorMessage" class="type-smaller mt-5 text-sundown">
+            {{ errorMessage }}
+          </p>
+        </transition>
+
         <p class="type-small text-gull-grey  mt-10 text-center">
-          Dont have an account?
+          Don't have an account?
           <span class="text-amaranth weight-700 ml-1">Sign Up</span>
         </p>
 
@@ -51,6 +65,12 @@
         <!--class="w-1/3 h-auto m-auto mt-10"-->
         <!--alt=""-->
         <!--/>-->
+      </div>
+
+      <div class="fixed p-10 top-0 left-0">
+        <p class="type-smaller text-white pointer" @click="backInHistory">
+          Back
+        </p>
       </div>
     </div>
   </div>
@@ -65,7 +85,8 @@ export default {
       form: {
         email: "",
         password: ""
-      }
+      },
+      errorMessage: false
     };
   },
   methods: {
@@ -73,37 +94,16 @@ export default {
       this.$store
         .dispatch("login", this.form)
         .then(() => this.$router.push("/"))
-        .catch(err => console.log(err));
+        .catch(err => {
+          console.log(err.response.data);
+          this.errorMessage = err.response.data;
+        });
+    },
+    backInHistory() {
+      this.$router.go(-1);
     }
   }
 };
 </script>
 
-<style scoped>
-.dotGrid {
-  position: absolute;
-  top: 0;
-  left: 0;
-  transform: translateX(-60%) translateY(-60%);
-  opacity: 0.5;
-}
-.main-screen {
-  background: linear-gradient(
-    45deg,
-    rgb(164, 210, 185) 0%,
-    rgb(164, 210, 185) 13%,
-    rgb(140, 185, 176) 13%,
-    rgb(140, 185, 176) 18%,
-    rgb(116, 160, 167) 18%,
-    rgb(116, 160, 167) 22%,
-    rgb(92, 135, 158) 22%,
-    rgb(92, 135, 158) 23%,
-    rgb(67, 109, 148) 23%,
-    rgb(67, 109, 148) 26%,
-    rgb(43, 84, 139) 26%,
-    rgb(43, 84, 139) 31%,
-    rgb(19, 59, 130) 31%,
-    rgb(19, 59, 130) 100%
-  );
-}
-</style>
+<style scoped></style>

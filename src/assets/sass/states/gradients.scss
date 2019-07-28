@@ -1,0 +1,129 @@
+.gradient-1 {
+  background: linear-gradient(
+    135deg,
+    rgb(15, 35, 134) 0%,
+    rgb(15, 35, 134) 15%,
+    rgb(19, 67, 156) 15%,
+    rgb(19, 67, 156) 47%,
+    rgb(23, 99, 178) 47%,
+    rgb(23, 99, 178) 76%,
+    rgb(26, 130, 200) 76%,
+    rgb(26, 130, 200) 92%,
+    rgb(30, 162, 222) 92%,
+    rgb(30, 162, 222) 100%
+  );
+}
+.gradient-2 {
+  background: linear-gradient(
+      126deg,
+      rgba(101, 101, 101, 0.09) 0%,
+      rgba(101, 101, 101, 0.09) 68%,
+      rgba(200, 200, 200, 0.09) 68%,
+      rgba(200, 200, 200, 0.09) 100%
+    ),
+    linear-gradient(
+      164deg,
+      rgba(238, 238, 238, 0.03) 0%,
+      rgba(238, 238, 238, 0.03) 90%,
+      rgba(14, 14, 14, 0.03) 90%,
+      rgba(14, 14, 14, 0.03) 100%
+    ),
+    linear-gradient(
+      27deg,
+      rgba(214, 214, 214, 0.04) 0%,
+      rgba(214, 214, 214, 0.04) 34%,
+      rgba(104, 104, 104, 0.04) 34%,
+      rgba(104, 104, 104, 0.04) 100%
+    ),
+    linear-gradient(
+      175deg,
+      rgba(20, 20, 20, 0.01) 0%,
+      rgba(20, 20, 20, 0.01) 4%,
+      rgba(9, 9, 9, 0.01) 4%,
+      rgba(9, 9, 9, 0.01) 100%
+    ),
+    linear-gradient(
+      257deg,
+      rgba(14, 14, 14, 0.01) 0%,
+      rgba(14, 14, 14, 0.01) 28%,
+      rgba(164, 164, 164, 0.01) 28%,
+      rgba(164, 164, 164, 0.01) 100%
+    ),
+    linear-gradient(
+      311deg,
+      rgba(68, 68, 68, 0.07) 0%,
+      rgba(68, 68, 68, 0.07) 33%,
+      rgba(213, 213, 213, 0.07) 33%,
+      rgba(213, 213, 213, 0.07) 100%
+    ),
+    linear-gradient(
+      244deg,
+      rgba(43, 43, 43, 0.02) 0%,
+      rgba(43, 43, 43, 0.02) 80%,
+      rgba(161, 161, 161, 0.02) 80%,
+      rgba(161, 161, 161, 0.02) 100%
+    ),
+    linear-gradient(
+      130deg,
+      rgba(255, 255, 255, 0.04) 0%,
+      rgba(255, 255, 255, 0.04) 49%,
+      rgba(105, 105, 105, 0.04) 49%,
+      rgba(105, 105, 105, 0.04) 100%
+    ),
+    linear-gradient(90deg, rgb(190, 33, 111), rgb(97, 3, 0));
+}
+
+.gradient-3 {
+  background: linear-gradient(
+    45deg,
+    rgb(164, 210, 185) 0%,
+    rgb(164, 210, 185) 13%,
+    rgb(140, 185, 176) 13%,
+    rgb(140, 185, 176) 18%,
+    rgb(116, 160, 167) 18%,
+    rgb(116, 160, 167) 22%,
+    rgb(92, 135, 158) 22%,
+    rgb(92, 135, 158) 23%,
+    rgb(67, 109, 148) 23%,
+    rgb(67, 109, 148) 26%,
+    rgb(43, 84, 139) 26%,
+    rgb(43, 84, 139) 31%,
+    rgb(19, 59, 130) 31%,
+    rgb(19, 59, 130) 100%
+  );
+}
+
+.gradient-4 {
+  background: linear-gradient(45deg, rgb(51, 138, 249), rgb(47, 248, 255));
+}
+.gradient-5 {
+  background: linear-gradient(
+    135deg,
+    rgb(15, 35, 134) 0%,
+    rgb(15, 35, 134) 15%,
+    rgb(19, 67, 156) 15%,
+    rgb(19, 67, 156) 47%,
+    rgb(23, 99, 178) 47%,
+    rgb(23, 99, 178) 76%,
+    rgb(26, 130, 200) 76%,
+    rgb(26, 130, 200) 92%,
+    rgb(30, 162, 222) 92%,
+    rgb(30, 162, 222) 100%
+  );
+}
+.animateGradient {
+  background-size: 120% 120%;
+  animation: gradientAnimate 10s ease-in-out infinite;
+}
+
+@keyframes gradientAnimate {
+  0% {
+    background-position: 63% 0%;
+  }
+  50% {
+    background-position: 38% 100%;
+  }
+  100% {
+    background-position: 63% 0%;
+  }
+}
